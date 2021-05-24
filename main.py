@@ -19,13 +19,13 @@ Password = '8012'
 
 ReservationYear = '2021'
 ReservationMonth = '05'
-ReservationDay = '25'
+ReservationDay = '31'
 
 ReservationDate = ReservationYear + ReservationMonth + ReservationDay
 
 
 
-ReservationSeq = '025'
+ReservationSeq = '023'
 
 
 
