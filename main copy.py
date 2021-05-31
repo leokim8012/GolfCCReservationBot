@@ -58,13 +58,9 @@ result.accept()
 
 
 
-# targetYear = int(ReservationYear)
-# targetMonth = int(ReservationMonth)
-# targetDay = int(ReservationDay) - 7
-
-targetYear = 2021
-targetMonth = 5
-targetDay = 31
+targetYear = int(ReservationYear)
+targetMonth = int(ReservationMonth)
+targetDay = int(ReservationDay) - 7
 targetHour = 9
 targetMinute = 0
 targetSecond = 0
