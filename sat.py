@@ -18,14 +18,14 @@ Password = '3359'
 
 
 ReservationYear = '2021'
-ReservationMonth = '05'
-ReservationDay = '29'
+ReservationMonth = '6'
+ReservationDay = '12'
 
 ReservationDate = ReservationYear + ReservationMonth + ReservationDay
 
 
 
-ReservationSeq = '025'
+ReservationSeq = '023'
 
 
 
