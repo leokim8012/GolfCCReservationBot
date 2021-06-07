@@ -102,7 +102,7 @@ driver.get(url=ReservationURL)
 # driver.execute_script(activeForm)
 
 
-date = ['08', '09', '10', '11', '12', '13']
+date = ['14', '15', '16', '17', '18', '19', '20']
 
 a = [0,1,2]
 
@@ -120,14 +120,18 @@ for day in date:
   calendarData = driver.execute_script('return ' + getCalendar)
   # print(calendarData)
   
-  # timeData = getTimeFromCalendarData(calendarData)
-  # print(timeData)
-  availableForm = getFormFromCalendarData(calendarData)
-  print(availableForm)
+  timeData = getTimeFromCalendarData(calendarData)
+  print(timeData)
+  # availableForm = getFormFromCalendarData(calendarData)
+  # print(availableForm)
 
   file.write(ReservationDate +" \n")
 
-  for time in availableForm:
+  # for time in availableForm:
+  #   file.write(time + " \n")
+  # file.write("\n")
+
+  for time in timeData:
     file.write(time + " \n")
   file.write("\n")
 

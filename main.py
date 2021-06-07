@@ -19,10 +19,9 @@ Password = '8012'
 
 ReservationYear = '2021'
 ReservationMonth = '06'
-ReservationDay = '07'
+ReservationDay = '14'
 
 ReservationDate = ReservationYear + ReservationMonth + ReservationDay
-
 
 
 ReservationSeq = '023'
@@ -56,22 +55,21 @@ result.accept()
 
 
 
-
+reservationDateTime = datetime(int(ReservationYear), int(ReservationMonth), int(ReservationDay), 9, 0, 0)
 
 # targetYear = int(ReservationYear)
 # targetMonth = int(ReservationMonth)
 # targetDay = int(ReservationDay) - 7
 
-targetYear = 2021
-targetMonth = 5
-targetDay = 31
-targetHour = 9
-targetMinute = 0
-targetSecond = 0
+targetDate = reservationDateTime - timedelta(days=7)
 
-targetDate = datetime(targetYear, targetMonth, targetDay, targetHour, targetMinute, targetSecond)
 
-# print(targetDate.minute-now.minute, '분 ', targetDate.second - now.second, '초 뒤 예약을 시작합니다.')
+# targetDate = datetime(targetYear, targetMonth, targetDay, targetHour, targetMinute, targetSecond)
+
+targetYear = targetDate.year
+targetMonth = targetDate.month
+targetDay = targetDate.day
+
 
 
 now = datetime.now()
@@ -80,7 +78,8 @@ prev_time = now
 
 print('현재 시간', now)
 print('예약 시간', targetDate)
-
+print('목표 예약 날짜', reservationDateTime)
+print('목표 예약 시간', Form)
 driver.get(url=ReservationURL)
 while(1):
   now = datetime.now()
