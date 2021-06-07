@@ -17,34 +17,19 @@ ID = '111346'
 Password = '8012'
 
 
-ReservationYear = '2021'
-ReservationMonth = '06'
-ReservationDay = '14'
-
-ReservationDate = ReservationYear + ReservationMonth + ReservationDay
-
-
-ReservationSeq = '023'
-
-
-
-inputID = 'memberId'
-inputPW = 'memberPw'
+inputIDElement = 'memberId'
+inputPWElement = 'memberPw'
 
 LoginURL = 'https://www.daegucc.co.kr/Member/Login'
-ReservationURL = 'https://www.daegucc.co.kr/Booking/ReservationCalendar?day=' + ReservationDate
-# 
-Form = 'ReservationForm(\'160\', \'' + ReservationDate + '\', \'' + ReservationSeq + '\');'
-ReservationOK = 'Reservation(\'ok\');'
 
 driver = webdriver.Chrome(executable_path='chromedriver')
 
 #Goto Login
 driver.get(url=LoginURL)
 #Login
-idBox = driver.find_element_by_id(inputID)
+idBox = driver.find_element_by_id(inputIDElement)
 idBox.send_keys(ID)
-pwBox = driver.find_element_by_id(inputPW)
+pwBox = driver.find_element_by_id(inputPWElement)
 pwBox.send_keys(Password)
 driver.execute_script('login()')
 
@@ -55,40 +40,48 @@ result.accept()
 
 
 
+ReservationYear = '2021'
+ReservationMonth = '06'
+ReservationDay = '20'
+ReservationDate = ReservationYear + ReservationMonth + ReservationDay
+
+ReservationURL = 'https://www.daegucc.co.kr/Booking/ReservationCalendar?day=' + ReservationDate
+
+ReservationSeq = '023'
+Form = 'ReservationForm(\'160\', \'' + ReservationDate + '\', \'' + ReservationSeq + '\');'
+ReservationOK = 'Reservation(\'ok\');'
+
+
 reservationDateTime = datetime(int(ReservationYear), int(ReservationMonth), int(ReservationDay), 9, 0, 0)
 
-# targetYear = int(ReservationYear)
-# targetMonth = int(ReservationMonth)
-# targetDay = int(ReservationDay) - 7
-
-targetDate = reservationDateTime - timedelta(days=7)
-
-
-# targetDate = datetime(targetYear, targetMonth, targetDay, targetHour, targetMinute, targetSecond)
-
-targetYear = targetDate.year
-targetMonth = targetDate.month
-targetDay = targetDate.day
-
-
+if(reservationDateTime.weekday() == 6):
+  targetDateTime = reservationDateTime - timedelta(days=12)
+elif(reservationDateTime.weekday() == 5):
+  targetDateTime = reservationDateTime - timedelta(days=11)
+else:
+  targetDateTime = reservationDateTime - timedelta(days=7)
 
 now = datetime.now()
 prev_time = now
 
-
-print('현재 시간', now)
-print('예약 시간', targetDate)
 print('목표 예약 날짜', reservationDateTime)
 print('목표 예약 시간', Form)
+
+print('예약 실행 시간', targetDateTime)
+print('현재 시간', now)
+
 driver.get(url=ReservationURL)
+
+
+
 while(1):
   now = datetime.now()
-  countDown = targetDate - now
+  countDown = targetDateTime - now
 
   if(now.second - prev_time.second >= 1):
     print('예약까지 남은 시간:', countDown)
 
-  if(now.year == targetDate.year and now.month == targetDate.month and now.day == targetDate.day and now.hour == targetDate.hour and now.minute == targetDate.minute and now.second == targetDate.second):
+  if(now.year == targetDateTime.year and now.month == targetDateTime.month and now.day == targetDateTime.day and now.hour == targetDateTime.hour and now.minute == targetDateTime.minute and now.second == targetDateTime.second):
     startingTime = now
     print('시작 시간', startingTime)
 
@@ -113,8 +106,6 @@ while(1):
     print('종료 시간', endTime)
     print('총 소요 시간: ', endTime - startingTime)
     break
-
-
 
   prev_time = now
 
