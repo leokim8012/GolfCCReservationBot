@@ -42,14 +42,14 @@ result.accept()
 
 ReservationYear = '2021'
 ReservationMonth = '06'
-ReservationDay = '20'
+ReservationDay = '26'
 ReservationDate = ReservationYear + ReservationMonth + ReservationDay
 
 ReservationURL = 'https://www.daegucc.co.kr/Booking/ReservationCalendar?day=' + ReservationDate
 
 
 # 2021/06/07 주문 20일(일) seq 14, 20(7:31, 8:13) 예약
-ReservationSeq = '020'
+ReservationSeq = '019'
 Form = 'ReservationForm(\'160\', \'' + ReservationDate + '\', \'' + ReservationSeq + '\');'
 ReservationOK = 'Reservation(\'ok\');'
 
