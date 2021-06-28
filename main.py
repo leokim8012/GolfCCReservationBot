@@ -13,8 +13,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from datetime import datetime, timedelta
 import time
 
-ID = '111346'
-Password = '8012'
+ID = '111763'
+Password = '3359'
+# ID = '111346'
+# Password = '8012'
 
 
 inputIDElement = 'memberId'
@@ -22,7 +24,8 @@ inputPWElement = 'memberPw'
 
 LoginURL = 'https://www.daegucc.co.kr/Member/Login'
 
-driver = webdriver.Chrome(executable_path='chromedriver')
+# driver = webdriver.Chrome(r"C:\Users\LG\chromedriver\chromedriver.exe")
+driver = webdriver.Chrome(r".\chromedriver\chromedriver.exe")
 
 #Goto Login
 driver.get(url=LoginURL)
@@ -41,15 +44,15 @@ result.accept()
 
 
 ReservationYear = '2021'
-ReservationMonth = '06'
-ReservationDay = '21'
+ReservationMonth = '07'
+ReservationDay = '10'
 ReservationDate = ReservationYear + ReservationMonth + ReservationDay
 
 ReservationURL = 'https://www.daegucc.co.kr/Booking/ReservationCalendar?day=' + ReservationDate
 
 
 # 2021/06/07 주문 20일(일) seq 14, 20(7:31, 8:13) 예약
-ReservationSeq = '022'
+ReservationSeq = '015'
 Form = 'ReservationForm(\'160\', \'' + ReservationDate + '\', \'' + ReservationSeq + '\');'
 ReservationOK = 'Reservation(\'ok\');'
 
