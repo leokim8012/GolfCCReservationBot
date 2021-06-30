@@ -1,0 +1,20 @@
+예약까지 남은 시간: 0:00:02
+예약까지 남은 시간: 0:00:01
+시작 시간 2021-06-16 09:00:00
+폼 입력 중
+ReservationForm('160', '20210623', '019');
+폼 작성 완료
+예약 확인 중
+Reservation('ok');
+Traceback (most recent call last):
+  File "main.py", line 101, in <module>
+    driver.execute_script(ReservationOK)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 634, in execute_script
+    return self.execute(command, {
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 선택하신 시간은 이미 다른분이 예약을 하셨습니다.
+Message: unexpected alert open: {Alert text : 선택하신 시간은 이미 다른분이 예약을 하셨습니다.}
+  (Session info: chrome=91.0.4472.101)
