@@ -18,3 +18,101 @@ Traceback (most recent call last):
 selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 선택하신 시간은 이미 다른분이 예약을 하셨습니다.
 Message: unexpected alert open: {Alert text : 선택하신 시간은 이미 다른분이 예약을 하셨습니다.}
   (Session info: chrome=91.0.4472.101)
+
+
+  예약까지 남은 시간: 0:01:17
+예약까지 남은 시간: 0:01:16
+예약까지 남은 시간: 0:01:15
+예약까지 남은 시간: 0:01:14
+예약까지 남은 시간: 0:01:13
+예약까지 남은 시간: 0:01:12
+예약까지 남은 시간: 0:01:11
+예약까지 남은 시간: 0:01:10
+예약까지 남은 시간: 0:01:09
+예약까지 남은 시간: 0:01:08
+예약까지 남은 시간: 0:01:07
+예약까지 남은 시간: 0:01:06
+예약까지 남은 시간: 0:01:05
+예약까지 남은 시간: 0:01:04
+예약까지 남은 시간: 0:01:03
+예약까지 남은 시간: 0:01:02
+예약까지 남은 시간: 0:01:01
+예약까지 남은 시간: 0:00:59
+예약까지 남은 시간: 0:00:58
+예약까지 남은 시간: 0:00:57
+예약까지 남은 시간: 0:00:56
+예약까지 남은 시간: 0:00:55
+예약까지 남은 시간: 0:00:54
+예약까지 남은 시간: 0:00:53
+예약까지 남은 시간: 0:00:52
+예약까지 남은 시간: 0:00:51
+예약까지 남은 시간: 0:00:50
+예약까지 남은 시간: 0:00:49
+예약까지 남은 시간: 0:00:48
+예약까지 남은 시간: 0:00:47
+예약까지 남은 시간: 0:00:46
+예약까지 남은 시간: 0:00:45
+예약까지 남은 시간: 0:00:44
+예약까지 남은 시간: 0:00:43
+예약까지 남은 시간: 0:00:42
+예약까지 남은 시간: 0:00:41
+예약까지 남은 시간: 0:00:40
+예약까지 남은 시간: 0:00:39
+예약까지 남은 시간: 0:00:38
+예약까지 남은 시간: 0:00:37
+예약까지 남은 시간: 0:00:36
+예약까지 남은 시간: 0:00:35
+예약까지 남은 시간: 0:00:34
+예약까지 남은 시간: 0:00:33
+예약까지 남은 시간: 0:00:32
+예약까지 남은 시간: 0:00:31
+예약까지 남은 시간: 0:00:30
+예약까지 남은 시간: 0:00:29
+예약까지 남은 시간: 0:00:28
+예약까지 남은 시간: 0:00:27
+예약까지 남은 시간: 0:00:26
+예약까지 남은 시간: 0:00:25
+예약까지 남은 시간: 0:00:24
+예약까지 남은 시간: 0:00:23
+예약까지 남은 시간: 0:00:22
+예약까지 남은 시간: 0:00:21
+예약까지 남은 시간: 0:00:20
+예약까지 남은 시간: 0:00:19
+예약까지 남은 시간: 0:00:18
+예약까지 남은 시간: 0:00:17
+예약까지 남은 시간: 0:00:16
+예약까지 남은 시간: 0:00:15
+예약까지 남은 시간: 0:00:14
+예약까지 남은 시간: 0:00:13
+예약까지 남은 시간: 0:00:12
+예약까지 남은 시간: 0:00:11
+예약까지 남은 시간: 0:00:10
+예약까지 남은 시간: 0:00:09
+예약까지 남은 시간: 0:00:08
+예약까지 남은 시간: 0:00:07
+예약까지 남은 시간: 0:00:06
+예약까지 남은 시간: 0:00:05
+예약까지 남은 시간: 0:00:04
+예약까지 남은 시간: 0:00:03
+예약까지 남은 시간: 0:00:02
+예약까지 남은 시간: 0:00:01
+시작 시간 2021-07-06 09:00:00
+폼 입력 중
+ReservationForm('160', '20210718', '014');
+폼 작성 완료
+예약 확인 중
+Reservation('ok');
+Traceback (most recent call last):
+  File "main.py", line 105, in <module>
+    driver.execute_script(ReservationOK)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 634, in execute_script
+    return self.execute(command, {
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 241, in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)
+selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: 다른 회원님께서 예약중입니다. 다른 시간을 선택해 주십시요.
+Message: unexpected alert open: {Alert text : 다른 회원님께서 예약중입니다. 다른 시간을 선택해 주십시요.}
+  (Session info: chrome=91.0.4472.114)
+
+kimkwanwoo@MacBook-Pro-2 GolfCCReservationBot % 

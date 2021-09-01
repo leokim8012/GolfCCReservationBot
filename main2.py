@@ -15,6 +15,8 @@ import time
 
 ID = '111763'
 Password = '3359'
+# ID = '111346'
+# Password = '8012'
 
 
 inputIDElement = 'memberId'
@@ -22,6 +24,8 @@ inputPWElement = 'memberPw'
 
 LoginURL = 'https://www.daegucc.co.kr/Member/Login'
 
+# driver = webdriver.Chrome(r".\chromedriver\chromedriver_mac")
+# driver = webdriver.Chrome(ChromeDriverManager().install())
 driver = webdriver.Chrome(executable_path='chromedriver')
 
 #Goto Login
@@ -41,15 +45,15 @@ result.accept()
 
 
 ReservationYear = '2021'
-ReservationMonth = '06'
-ReservationDay = '26'
+ReservationMonth = '09'
+ReservationDay = '11'
 ReservationDate = ReservationYear + ReservationMonth + ReservationDay
 
 ReservationURL = 'https://www.daegucc.co.kr/Booking/ReservationCalendar?day=' + ReservationDate
 
 
-# 2021/06/07 주문 20일(일) seq 14, 20(7:31, 8:13) 예약
-ReservationSeq = '019'
+# 2021/06/07 주문 20일(일) seq 14, 20 47(7:31, 8:13, 17:22) 예약
+ReservationSeq = '018'
 Form = 'ReservationForm(\'160\', \'' + ReservationDate + '\', \'' + ReservationSeq + '\');'
 ReservationOK = 'Reservation(\'ok\');'
 
