@@ -46,28 +46,28 @@ result.accept()
 
 ReservationYear = '2021'
 ReservationMonth = '10'
-ReservationDay = '03'
+ReservationDay = '16'
 ReservationDate = ReservationYear + ReservationMonth + ReservationDay
 
 ReservationURL = 'https://www.daegucc.co.kr/Booking/ReservationCalendar?day=' + ReservationDate
 
 
 # 2021/06/07 주문 20일(일) seq 14, 20 47(7:31, 8:13, 17:22) 예약
-ReservationSeq = '015'
+ReservationSeq = '027'
 Form = 'ReservationForm(\'160\', \'' + ReservationDate + '\', \'' + ReservationSeq + '\');'
 ReservationOK = 'Reservation(\'ok\');'
 
 
 reservationDateTime = datetime(int(ReservationYear), int(ReservationMonth), int(ReservationDay), 9, 0, 0)
 
-# if(reservationDateTime.weekday() == 6):
-#   targetDateTime = reservationDateTime - timedelta(days=12)
-# elif(reservationDateTime.weekday() == 5):
-#   targetDateTime = reservationDateTime - timedelta(days=11)
-# else:
-#   targetDateTime = reservationDateTime - timedelta(days=7)
+if(reservationDateTime.weekday() == 6):
+  targetDateTime = reservationDateTime - timedelta(days=12)
+elif(reservationDateTime.weekday() == 5):
+  targetDateTime = reservationDateTime - timedelta(days=11)
+else:
+  targetDateTime = reservationDateTime - timedelta(days=7)
 
-targetDateTime = reservationDateTime - timedelta(days=10)
+# targetDateTime = reservationDateTime - timedelta(days=10)/
 
 
 now = datetime.now()
