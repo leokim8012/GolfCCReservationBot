@@ -48,7 +48,7 @@ def reservataion(driver, configs):
     countDown = targetDateTime - now
   
     if((countDown.seconds / 60) > 30):
-      print(countDown)
+      print(countDown, end = '\r')
       time.sleep(10)
       continue
 
