@@ -1,36 +1,33 @@
 import argparse
 
 from utils import config
+from utils import booker
+from utils import chromedriver
 
 
-def reservataion(input_args):
+def reservation(input_args):
+  reservationConfig = input_args.config
+  configs = config.read_config(reservationConfig)
+
+  driver = chromedriver.createChormeDriver()
+  booker.reservataion(driver, configs)
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '--id',
+        '--config',
         required=True,
-        help='PRETRAINED or TRAIN',
+        help='configs 폴더 확인.',
     )
 
-    parser.add_argument(
-        '--reservationDate',
-        required=True,
-        help='The GAN type',
-    )
-    parser.add_argument(
-        '--reservationTime',
-        required=True,
-        help='The GAN type',
-    )
+    # parser.add_argument(
+    #     '--reservationTime',
+    #     required=True,
+    #     help='The GAN type',
+    # )
     args = parser.parse_args()
 
-    if(args.exp == 'TRAIN'):
-      run_training(args)
-    elif(args.exp == 'PRETRAINED'):
-      run_pretrained(args)
-    elif(args.exp == 'GIF'):
-      makeGIF(args)
+    reservation(args)
       
 
 

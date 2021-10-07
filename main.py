@@ -1,13 +1,5 @@
 import selenium
 from selenium import webdriver
-from selenium.webdriver import ActionChains
-
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
 
 
 from datetime import datetime, timedelta
@@ -19,10 +11,9 @@ ID = '111346'
 Password = '8012'
 
 
+LoginURL = 'https://www.daegucc.co.kr/Member/Login'
 inputIDElement = 'memberId'
 inputPWElement = 'memberPw'
-
-LoginURL = 'https://www.daegucc.co.kr/Member/Login'
 
 # driver = webdriver.Chrome(r"C:\Users\LG\chromedriver\chromedriver.exe")
 # driver = webdriver.Chrome(r".\chromedriver\chromedriver.exe")
