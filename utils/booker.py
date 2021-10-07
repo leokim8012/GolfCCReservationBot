@@ -46,12 +46,6 @@ def reservataion(driver, configs):
   while(1):
     now = datetime.now()
     countDown = targetDateTime - now
-  
-    if((countDown.seconds / 60) > 30):
-      print(countDown, end = '\r')
-      time.sleep(10)
-      continue
-
 
     if(now.second - prev_time.second >= 1):
       print(f'예약까지 남은 시간: {countDown}', end = '\r')
