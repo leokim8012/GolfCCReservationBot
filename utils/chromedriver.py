@@ -10,6 +10,6 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 
 def createChormeDriver():
-  driver = webdriver.Chrome(r"../chromedriver/chromedriver.exe")
+  driver = webdriver.Chrome(r".\chromedriver\chromedriver.exe")
   # driver = webdriver.Chrome(executable_path='chromedriver')
   return driver

@@ -6,6 +6,8 @@ Following Program **should not** be used for commercial use.
 
 - Python 3.X
 - Selenium
+- pyyaml
+- easydict
 - Google Chorme
 - Chorme driver
 
