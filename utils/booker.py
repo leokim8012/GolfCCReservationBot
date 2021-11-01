@@ -47,8 +47,8 @@ def reservataion(driver, configs):
     now = datetime.now()
     countDown = targetDateTime - now
 
-    if(now.second - prev_time.second >= 1):
-      print(f'예약까지 남은 시간: {countDown}', end = '\r')
+    print(f'예약까지 남은 시간: {countDown}', end = '\r')
+    # if(now.second - prev_time.second >= 1):
 
     if(now.year == targetDateTime.year and now.month == targetDateTime.month and now.day == targetDateTime.day and now.hour == targetDateTime.hour and now.minute == targetDateTime.minute and now.second == targetDateTime.second):
       startingTime = now

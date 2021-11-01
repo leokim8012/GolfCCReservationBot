@@ -45,17 +45,17 @@ result.accept()
 
 
 ReservationYear = '2021'
-ReservationMonth = '10'
-ReservationDay = '17'
+ReservationMonth = '11'
+ReservationDay = '06'
 ReservationDate = ReservationYear + ReservationMonth + ReservationDay
 
 ReservationURL = 'https://www.daegucc.co.kr/Booking/ReservationCalendar?day=' + ReservationDate
 
 
 # 2021/06/07 주문 20일(일) seq 14, 20 47(7:31, 8:13, 17:22) 예약
-ReservationSeq = '012'
+ReservationSeq = '019'
 Form = 'ReservationForm(\'160\', \'' + ReservationDate + '\', \'' + ReservationSeq + '\');'
-ReservationOK = 'Reservation(\'ok\');'
+ReservationOK = 'Reservation(\'\');'
 
 
 reservationDateTime = datetime(int(ReservationYear), int(ReservationMonth), int(ReservationDay), 9, 0, 0)
@@ -108,10 +108,6 @@ while(1):
     print(ReservationOK)
     driver.execute_script(ReservationOK)
     print('예약 완료')
-    
-    result = driver.switch_to_alert()
-    result.accept()
-
     endTime = now
     print('종료 시간', endTime)
     print('총 소요 시간: ', endTime - startingTime)

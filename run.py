@@ -1,8 +1,8 @@
 import argparse
 
-from utils import config
-from utils import booker
-from utils import chromedriver
+import utils.config as config
+import utils.booker as booker
+import utils.chromedriver as chromedriver
 
 
 def reservation(input_args):
