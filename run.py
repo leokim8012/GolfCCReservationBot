@@ -19,12 +19,6 @@ def main():
         required=True,
         help='configs 폴더 확인.',
     )
-
-    # parser.add_argument(
-    #     '--reservationTime',
-    #     required=True,
-    #     help='The GAN type',
-    # )
     args = parser.parse_args()
 
     reservation(args)

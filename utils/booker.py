@@ -10,7 +10,7 @@ def reservataion(driver, configs):
   ReservationDate = configs.ReservationDate
   ReservationSeq = configs.ReservationSeq
   Form = 'ReservationForm(\'160\', \'' + ReservationDate + '\', \'' + ReservationSeq + '\');'
-  ReservationOK = 'Reservation(\'ok\');'
+  ReservationOK = 'Reservation(\'\');'
 
 
 
@@ -25,9 +25,11 @@ def reservataion(driver, configs):
     targetDateTime = reservationDateTime - timedelta(days=11)
   else:
     targetDateTime = reservationDateTime - timedelta(days=7)
+  
+  # For testing
+  # targetDateTime = datetime.now() + timedelta(minutes=1)
 
   now = datetime.now()
-  prev_time = now
 
   print('=================================================================')
   print(f'예약자 ID: {configs.ID}')
@@ -52,7 +54,6 @@ def reservataion(driver, configs):
 
     if(now.year == targetDateTime.year and now.month == targetDateTime.month and now.day == targetDateTime.day and now.hour == targetDateTime.hour and now.minute == targetDateTime.minute and now.second == targetDateTime.second):
       startingTime = now
-      print('=================================================================')
       print(f'시작 시간: {startingTime}')
 
 
@@ -70,8 +71,8 @@ def reservataion(driver, configs):
       print(f'예약 완료')
       print('=================================================================')
       
-      result = driver.switch_to_alert()
-      result.accept()
+      # result = driver.switch_to_alert()
+      # result.accept()
 
       endTime = now
       print(f'종료 시간: {endTime}')
@@ -79,8 +80,6 @@ def reservataion(driver, configs):
       print('=================================================================')
       
       break
-
-    prev_time = now
 
 
 
