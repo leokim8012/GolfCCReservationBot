@@ -10,6 +10,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 
 def createChormeDriver():
-  driver = webdriver.Chrome(r".\chromedriver\chromedriver.exe")
+  option = webdriver.ChromeOptions()
+  option.add_experimental_option("excludeSwitches", ["enable-logging"])
+  driver = webdriver.Chrome(r".\chromedriver\chromedriver.exe", options=option)
   # driver = webdriver.Chrome(executable_path='chromedriver')
   return driver
