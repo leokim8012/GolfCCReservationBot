@@ -49,10 +49,12 @@ def reservataion(driver, configs):
     now = datetime.now()
     countDown = targetDateTime - now
 
+    diff = now - targetDateTime
+    diff_in_micro = diff.total_seconds() * 1000000
     print(f'예약까지 남은 시간: {countDown}', end = '\r')
     # if(now.second - prev_time.second >= 1):
 
-    if(now.year == targetDateTime.year and now.month == targetDateTime.month and now.day == targetDateTime.day and now.hour == targetDateTime.hour and now.minute == targetDateTime.minute and now.second == targetDateTime.second):
+    if(diff_in_micro > 100000):
       startingTime = now
       print(f'시작 시간: {startingTime}')
 
