@@ -11,6 +11,7 @@ def reservataion(driver, configs):
   ReservationSeq = configs.ReservationSeq
   Form = 'ReservationForm(\'160\', \'' + ReservationDate + '\', \'' + ReservationSeq + '\');'
   ReservationOK = 'Reservation(\'\');'
+  delay =  configs.delay
 
 
 
@@ -38,12 +39,14 @@ def reservataion(driver, configs):
   print(f'목표 예약 시간: {Form}')
   print('=================================================================')
   print(f'예약 실행 시간: {targetDateTime}')
+  print(f'딜레이 시간: {delay}')
   print(f'현재 시간: {now}')
   print('=================================================================')
 
 
   ReservationURL = 'https://www.daegucc.co.kr/Booking/ReservationCalendar?day=' + ReservationDate
   driver.get(url=ReservationURL)
+
 
   while(1):
     now = datetime.now()
@@ -54,7 +57,7 @@ def reservataion(driver, configs):
     print(f'예약까지 남은 시간: {countDown}', end = '\r')
     # if(now.second - prev_time.second >= 1):
 
-    if(diff_in_micro > 100000):
+    if(diff_in_micro > 1000000 * delay):
       startingTime = now
       print(f'시작 시간: {startingTime}')
 
