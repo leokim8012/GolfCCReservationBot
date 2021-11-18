@@ -1,5 +1,5 @@
 ID: "111346"
 Password: "8012"
-ReservationDate: "20211109"
+ReservationDate: "20211126"
 ReservationSeq: "019"
-delay: 0.1
+delay: 0.5

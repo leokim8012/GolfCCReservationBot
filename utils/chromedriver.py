@@ -9,9 +9,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 
+import os
+import platform
+
 def createChormeDriver():
-  option = webdriver.ChromeOptions()
-  option.add_experimental_option("excludeSwitches", ["enable-logging"])
-  driver = webdriver.Chrome(r".\chromedriver\chromedriver.exe", options=option)
-  # driver = webdriver.Chrome(executable_path='chromedriver')
+  if(platform.system() == 'Windows'):
+    option = webdriver.ChromeOptions()
+    option.add_experimental_option("excludeSwitches", ["enable-logging"])
+    driver = webdriver.Chrome(r".\chromedriver\chromedriver.exe", options=option)
+  elif (platform.system() == 'Darwin'):    
+    driver = webdriver.Chrome(executable_path='chromedriver')
   return driver
